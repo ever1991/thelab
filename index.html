@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>The Lab Coworking — San Luis Potosí</title>
+<title>Coworking The Lab — San Luis Potosí</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%23080D08'/%3E%3Crect%20x='1.5'%20y='1.5'%20width='29'%20height='29'%20rx='6'%20fill='%230C150C'%20stroke='%2315803D'/%3E%3Ctext%20x='16'%20y='21.5'%20font-family='monospace'%20font-size='13'%20font-weight='bold'%20fill='%234ADE80'%20text-anchor='middle'%3ETL%3C/text%3E%3C/svg%3E"/>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -371,6 +372,12 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
 @media(max-width:600px){
   .form-wrap form > div:first-child{grid-template-columns:1fr !important;}
 }
+
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;width:58px;height:58px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;z-index:95;box-shadow:0 6px 24px rgba(74,222,128,.35);transition:transform .25s,box-shadow .25s;cursor:none;}
+.wa-float:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 10px 34px rgba(74,222,128,.55);}
+.wa-float svg{width:32px;height:32px;}
+@media(max-width:600px){.wa-float{bottom:16px;right:16px;width:52px;height:52px;cursor:pointer;}.wa-float svg{width:28px;height:28px;}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -379,6 +386,11 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
 <!-- CURSOR -->
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/524448491367?text=Hola%2C%20me%20interesa%20The%20Lab%20Coworking" class="wa-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#080D08"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.893c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652a11.95 11.95 0 005.71 1.453h.006c6.585 0 11.946-5.359 11.949-11.893a11.82 11.82 0 00-3.479-8.405"/></svg>
+</a>
 
 <!-- NAV -->
 <nav>
@@ -449,7 +461,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
     <div class="stat-item reveal"><div class="stat-num">01</div><div class="stat-label">oficina privada</div></div>
     <div class="stat-item reveal reveal-delay-1"><div class="stat-num">20+</div><div class="stat-label">proyectos disponibles</div></div>
     <div class="stat-item reveal reveal-delay-2"><div class="stat-num">SLP</div><div class="stat-label">mejores empresas tech</div></div>
-    <div class="stat-item reveal reveal-delay-3"><div class="stat-num">01</div><div class="stat-label">lugar para builders</div></div>
+    <div class="stat-item reveal reveal-delay-3"><div class="stat-num">01</div><div class="stat-label">lugar para developers</div></div>
   </div>
 </div>
 
@@ -457,7 +469,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
 <section class="section" id="comunidad">
   <div class="section-inner">
     <div class="stag reveal">01 · COMUNIDAD</div>
-    <h2 class="sh2 reveal">Construido para <span class="g">builders</span></h2>
+    <h2 class="sh2 reveal">Construido para <span class="g">developers</span></h2>
     <p class="ssub reveal">The Lab no es para todos. Es para los que escriben código, diseñan sistemas y entienden que la IA es la herramienta más poderosa de la próxima década.</p>
     <div class="audience-grid">
       <div class="aud-card reveal">
@@ -490,17 +502,8 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
     <p class="ssub reveal">Dos modalidades pensadas para el trabajo profundo. Sin interrupciones. Con todo lo que necesitas para entrar en flow.</p>
     <div class="spaces-grid">
       <div class="space-card reveal">
-        <div class="space-img prv">
-          <svg width="260" height="160" viewBox="0 0 260 160">
-            <rect x="30" y="20" width="200" height="120" rx="4" fill="none" stroke="#0D2B0D" stroke-width="1"/>
-            <rect x="50" y="40" width="80" height="60" rx="3" fill="#0B1A0B" stroke="#14532D" stroke-width="1"/>
-            <text x="90" y="75" text-anchor="middle" font-family="Courier New" font-size="9" fill="#166534">OFICINA A</text>
-            <rect x="148" y="40" width="62" height="60" rx="3" fill="#0B1A0B" stroke="#14532D" stroke-width="1"/>
-            <text x="179" y="75" text-anchor="middle" font-family="Courier New" font-size="9" fill="#166534">PRIV</text>
-            <rect x="50" y="115" width="160" height="16" rx="2" fill="#060D06" stroke="#0D2B0D" stroke-width="0.5"/>
-            <text x="130" y="127" text-anchor="middle" font-family="Courier New" font-size="8" fill="#1A3A1A">floor plan · private office</text>
-            <circle cx="218" cy="30" r="4" fill="#4ADE80" opacity="0.6"/>
-          </svg>
+        <div class="space-img prv" style="height:240px;padding:0;">
+          <img src="assets/img/oficina-privada.jpg" alt="Oficina Privada The Lab — escritorio y zona lounge" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         </div>
         <div class="space-body">
           <div class="sp-badge">EXCLUSIVO</div>
@@ -516,25 +519,13 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
         </div>
       </div>
       <div class="space-card reveal reveal-delay-1">
-        <div class="space-img opn">
-          <svg width="260" height="160" viewBox="0 0 260 160">
-            <rect x="20" y="15" width="220" height="130" rx="4" fill="none" stroke="#0D2B0D" stroke-width="1"/>
-            <rect x="35" y="35" width="45" height="35" rx="2" fill="#0B1A0B" stroke="#0D2B0D" stroke-width="0.5"/>
-            <rect x="90" y="35" width="45" height="35" rx="2" fill="#0B1A0B" stroke="#0D2B0D" stroke-width="0.5"/>
-            <rect x="145" y="35" width="45" height="35" rx="2" fill="#0B1A0B" stroke="#14532D" stroke-width="1"/>
-            <rect x="35" y="85" width="45" height="35" rx="2" fill="#0B1A0B" stroke="#14532D" stroke-width="1"/>
-            <rect x="90" y="85" width="45" height="35" rx="2" fill="#0B1A0B" stroke="#0D2B0D" stroke-width="0.5"/>
-            <rect x="145" y="85" width="45" height="35" rx="2" fill="#0B1A0B" stroke="#0D2B0D" stroke-width="0.5"/>
-            <circle cx="57" cy="52" r="3" fill="#4ADE80" opacity="0.4"/>
-            <circle cx="167" cy="52" r="3" fill="#4ADE80" opacity="0.8"/>
-            <circle cx="57" cy="102" r="3" fill="#4ADE80" opacity="0.7"/>
-            <text x="130" y="140" text-anchor="middle" font-family="Courier New" font-size="8" fill="#1A3A1A">floor plan · open lab</text>
-          </svg>
+        <div class="space-img opn" style="height:240px;padding:0;">
+          <img src="assets/img/open-lab.jpg" alt="Open Lab The Lab — estación de trabajo con iMac" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         </div>
         <div class="space-body">
           <div class="sp-badge">COWORKING</div>
           <div class="sp-title">Open Lab</div>
-          <div class="sp-desc">Espacio abierto de coworking diseñado para la colaboración e intercambio de ideas entre la comunidad de builders.</div>
+          <div class="sp-desc">Espacio abierto de coworking diseñado para la colaboración e intercambio de ideas entre la comunidad de developers.</div>
           <ul class="sp-feat">
             <li>Hot desks disponibles diario o mensual</li>
             <li>Internet 1Gbps compartido</li>
@@ -572,7 +563,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
         <a href="#contacto" class="price-cta">RESERVAR DÍA</a>
       </div>
       <div class="price-card featured reveal reveal-delay-1">
-        <div class="price-plan">BUILDER</div>
+        <div class="price-plan">DEVELOPER</div>
         <div class="price-amount">$2,400 <span>MXN</span></div>
         <div class="price-period">por mes · Open Lab</div>
         <div class="price-divider"></div>
@@ -651,42 +642,37 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
   <div class="section-inner">
     <div class="stag reveal">05 · ESPACIO</div>
     <h2 class="sh2 reveal">El <span class="g">laboratorio</span></h2>
-    <p class="ssub reveal">Diseñado para el trabajo profundo. Cada detalle pensado para builders que necesitan concentración y colaboración.</p>
+    <p class="ssub reveal">Diseñado para el trabajo profundo. Cada detalle pensado para developers que necesitan concentración y colaboración.</p>
     <div class="gallery-grid">
       <div class="gal-item large gc1 reveal">
-        <div class="gal-inner" style="flex-direction:column;gap:8px;">
-          <svg width="80" height="80" viewBox="0 0 80 80"><rect x="10" y="10" width="60" height="60" rx="6" fill="none" stroke="#0D2B0D" stroke-width="1"/><rect x="20" y="20" width="18" height="14" rx="2" fill="#0B1A0B" stroke="#14532D" stroke-width="0.8"/><rect x="44" y="20" width="16" height="14" rx="2" fill="#0B1A0B" stroke="#0D2B0D" stroke-width="0.5"/><rect x="20" y="40" width="40" height="20" rx="2" fill="#0B1A0B" stroke="#14532D" stroke-width="0.8"/><circle cx="63" cy="17" r="4" fill="#4ADE80" opacity="0.7"/></svg>
-          <span style="font-family:'Courier New',monospace;font-size:10px;color:var(--muted);">Oficinas Privadas</span>
+        <div class="gal-inner">
+          <img src="assets/img/oficina-privada.jpg" alt="Oficina Privada The Lab" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         </div>
-        <div class="gal-overlay"><div class="gal-label">PRIVATE OFFICE</div></div>
+        <div class="gal-overlay"><div class="gal-label">OFICINA PRIVADA</div></div>
       </div>
       <div class="gal-item gc2 reveal reveal-delay-1">
-        <div class="gal-inner" style="flex-direction:column;gap:8px;">
-          <svg width="60" height="60" viewBox="0 0 60 60"><rect x="5" y="5" width="50" height="50" rx="4" fill="none" stroke="#0D2B0D" stroke-width="1"/><rect x="12" y="12" width="10" height="8" rx="1" fill="#0B1A0B" stroke="#0D2B0D" stroke-width="0.5"/><rect x="26" y="12" width="10" height="8" rx="1" fill="#0B1A0B" stroke="#14532D" stroke-width="0.8"/><rect x="40" y="12" width="10" height="8" rx="1" fill="#0B1A0B" stroke="#0D2B0D" stroke-width="0.5"/><rect x="12" y="28" width="10" height="8" rx="1" fill="#0B1A0B" stroke="#14532D" stroke-width="0.8"/><circle cx="31" cy="16" r="2" fill="#4ADE80" opacity="0.8"/></svg>
-          <span style="font-family:'Courier New',monospace;font-size:9px;color:var(--muted);">Open Lab</span>
+        <div class="gal-inner">
+          <img src="assets/img/bano-privado.jpg" alt="Baño privado de la oficina The Lab" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        </div>
+        <div class="gal-overlay"><div class="gal-label">BAÑO PRIVADO</div></div>
+      </div>
+      <div class="gal-item gc3 reveal reveal-delay-2">
+        <div class="gal-inner">
+          <img src="assets/img/coffee.jpg" alt="Coffee station The Lab" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        </div>
+        <div class="gal-overlay"><div class="gal-label">COFFEE</div></div>
+      </div>
+      <div class="gal-item gc4 reveal reveal-delay-1">
+        <div class="gal-inner">
+          <img src="assets/img/open-lab.jpg" alt="Open Lab The Lab" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         </div>
         <div class="gal-overlay"><div class="gal-label">OPEN LAB</div></div>
       </div>
-      <div class="gal-item gc3 reveal reveal-delay-2">
-        <div class="gal-inner" style="flex-direction:column;gap:8px;">
-          <div style="font-family:'Courier New',monospace;font-size:28px;color:var(--gd);opacity:.4;">&gt;_</div>
-          <span style="font-family:'Courier New',monospace;font-size:9px;color:var(--muted);">Terminal Zone</span>
-        </div>
-        <div class="gal-overlay"><div class="gal-label">TERMINAL ZONE</div></div>
-      </div>
-      <div class="gal-item gc4 reveal reveal-delay-1">
-        <div class="gal-inner" style="flex-direction:column;gap:8px;">
-          <div style="font-family:'Courier New',monospace;font-size:28px;color:var(--gd);opacity:.4;">☕</div>
-          <span style="font-family:'Courier New',monospace;font-size:9px;color:var(--muted);">Chill Zone</span>
-        </div>
-        <div class="gal-overlay"><div class="gal-label">CHILL ZONE</div></div>
-      </div>
       <div class="gal-item gc5 reveal reveal-delay-2">
-        <div class="gal-inner" style="flex-direction:column;gap:8px;">
-          <div style="font-family:'Courier New',monospace;font-size:24px;color:var(--gd);opacity:.4;">⬡⬡</div>
-          <span style="font-family:'Courier New',monospace;font-size:9px;color:var(--muted);">Design Studio</span>
+        <div class="gal-inner">
+          <img src="assets/img/recepcion.jpg" alt="Recepción The Lab con letrero neón" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         </div>
-        <div class="gal-overlay"><div class="gal-label">DESIGN STUDIO</div></div>
+        <div class="gal-overlay"><div class="gal-label">RECEPCIÓN</div></div>
       </div>
     </div>
   </div>
@@ -696,7 +682,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
 <section class="section" style="padding-top:0;" id="testimonios">
   <div class="section-inner">
     <div class="stag reveal">06 · COMUNIDAD</div>
-    <h2 class="sh2 reveal">Lo que dicen los <span class="g">builders</span></h2>
+    <h2 class="sh2 reveal">Lo que dicen los <span class="g">developers</span></h2>
     <div class="testi-grid">
       <div class="testi-card reveal">
         <div class="testi-quote">"</div>
@@ -709,7 +695,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
       </div>
       <div class="testi-card reveal reveal-delay-1">
         <div class="testi-quote">"</div>
-        <div class="testi-text">El espacio está diseñado para entrar en flow real. Las oficinas privadas son perfectas cuando necesito concentración total en un proyecto.</div>
+        <div class="testi-text">El espacio está diseñado para entrar en flow real. La oficina privada es perfecta cuando necesito concentración total en un proyecto.</div>
         <div class="testi-divider"></div>
         <div class="testi-author">
           <div class="testi-avatar">ML</div>
@@ -749,7 +735,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
   <div class="section-inner">
     <div class="stag reveal">08 · CONTENIDO</div>
     <h2 class="sh2 reveal">Del <span class="g">lab</span> al mundo</h2>
-    <p class="ssub reveal">Artículos técnicos, casos de uso de IA y guías para builders escritas por la comunidad de The Lab.</p>
+    <p class="ssub reveal">Artículos técnicos, casos de uso de IA y guías para developers escritas por la comunidad de The Lab.</p>
     <div class="blog-grid">
       <a href="#" class="blog-card reveal">
         <div class="blog-img gc1"><div class="blog-img-tag">&gt;_</div></div>
@@ -771,7 +757,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
         <div class="blog-img gc2"><div class="blog-img-tag">◈</div></div>
         <div class="blog-body">
           <div class="blog-cat">CARRERA · FREELANCE</div>
-          <div class="blog-title">De empleado a builder: cómo conseguir tus primeros proyectos tech en SLP</div>
+          <div class="blog-title">De empleado a developer: cómo conseguir tus primeros proyectos tech en SLP</div>
           <div class="blog-meta">May 10, 2026 · 5 min read</div>
         </div>
       </a>
@@ -784,12 +770,11 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
   <div class="companies-inner">
     <div class="co-label">CONECTAMOS CON LAS MEJORES EMPRESAS TECH DE SAN LUIS POTOSÍ</div>
     <div class="co-row">
-      <div class="co-pill">fintech.slp</div>
-      <div class="co-pill">saas.mx</div>
-      <div class="co-pill">ai.startup</div>
-      <div class="co-pill">ecommerce.co</div>
-      <div class="co-pill">dev.agency</div>
-      <div class="co-pill">data.lab</div>
+      <div class="co-pill">QMarketing</div>
+      <div class="co-pill">Fly Select</div>
+      <div class="co-pill">Kerala Viajes</div>
+      <div class="co-pill">Drybox</div>
+      <div class="co-pill">Aceros Alcalde</div>
     </div>
   </div>
 </div>
@@ -813,12 +798,12 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
         <div class="faq-a">Sí, muchos miembros de The Lab combinan su trabajo principal con proyectos freelance a través del lab. Los proyectos se estructuran con plazos flexibles para acomodarse a diferentes situaciones.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q"><span class="faq-q-text">¿Las 2 oficinas privadas están disponibles ahora mismo?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a">La disponibilidad varía. Te recomendamos aplicar para reservar tu lugar. En caso de lista de espera, te notificamos en cuanto haya apertura. Las oficinas se asignan por orden de solicitud y perfil del aplicante.</div>
+        <button class="faq-q"><span class="faq-q-text">¿La oficina privada está disponible ahora mismo?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a">La disponibilidad varía. Te recomendamos aplicar para reservar tu lugar. En caso de lista de espera, te notificamos en cuanto haya apertura. La oficina se asigna por orden de solicitud y perfil del aplicante.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q"><span class="faq-q-text">¿Qué tipo de empresas solicitan proyectos a través de The Lab?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a">Trabajamos con empresas establecidas de San Luis Potosí en sectores como fintech, manufactura inteligente, retail, logística y servicios profesionales. Todas con necesidades reales de tecnología y presupuestos definidos.</div>
+        <div class="faq-a">Trabajamos con empresas establecidas en todo México en sectores como fintech, manufactura inteligente, retail, logística y servicios profesionales. Todas con necesidades reales de tecnología y presupuestos definidos.</div>
       </div>
     </div>
   </div>
@@ -882,7 +867,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
     <div>
       <div class="fcol-title">ESPACIOS</div>
       <ul class="flinks">
-        <li><a href="#espacios">Oficinas privadas</a></li>
+        <li><a href="#espacios">Oficina privada</a></li>
         <li><a href="#espacios">Open lab</a></li>
         <li><a href="#precios">Precios</a></li>
         <li><a href="#galeria">El espacio</a></li>
@@ -902,7 +887,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
       <div class="fcol-title">CONTACTO</div>
       <ul class="flinks">
         <li><a href="mailto:sales@thelabcoworking.mx">sales@thelabcoworking.mx</a></li>
-        <li><a href="https://wa.me/52" class="flinks-wa">WhatsApp <span style="font-size:11px;color:var(--bg3);">· próximamente</span></a></li>
+        <li><a href="https://wa.me/524448491367" class="flinks-wa" target="_blank" rel="noopener">WhatsApp · 444 849 1367</a></li>
         <li style="margin-top:.8rem;">
           <span style="font-size:13px;color:var(--dim);line-height:1.6;">
             Francisco D. Covarrubias 205<br>
