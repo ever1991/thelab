@@ -191,9 +191,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2.5rem;height:56px
 .bt strong{color:var(--w);font-weight:500;}
 
 /* GALERÍA */
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,200px);gap:12px;margin-top:3rem;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,200px);gap:12px;margin-top:3rem;}
 .gal-item{border-radius:10px;overflow:hidden;position:relative;cursor:none;border:1px solid var(--bg3);}
 .gal-item.large{grid-row:span 2;grid-column:span 1;}
+.gal-item.large.end{grid-column:4;grid-row:1/span 2;}
 .gal-item:hover .gal-overlay{opacity:1;}
 .gal-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform .4s;}
 .gal-item:hover .gal-inner{transform:scale(1.04);}
@@ -205,6 +206,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2.5rem;height:56px
 .gc3{background:linear-gradient(135deg,#0B1F0B,#060D06);}
 .gc4{background:linear-gradient(135deg,#0A1A0A,#091209);}
 .gc5{background:linear-gradient(135deg,#0D2B0D,#060D06);}
+.gc6{background:linear-gradient(135deg,#0B1A0B,#070F07);}
 
 /* TESTIMONIOS */
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
@@ -294,6 +296,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
   .spaces-grid,.gallery-grid{grid-template-columns:1fr;}
   .gallery-grid{grid-template-rows:auto;}
   .gal-item.large{grid-row:span 1;}
+  .gal-item.large.end{grid-column:auto;grid-row:auto;}
   .steps-grid{grid-template-columns:1fr 1fr;}
   .steps-grid::before{display:none;}
   .footer-inner{grid-template-columns:1fr 1fr;}
@@ -334,6 +337,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
   .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
   .gal-item{height:140px;}
   .gal-item.large{grid-column:span 2;height:160px;}
+  .gal-item.large.end{grid-column:span 2;}
   .benefit-inner{padding:3rem 1.2rem;gap:2rem;}
   .term-body{font-size:12px;padding:1rem;}
   .bl li{gap:8px;}
@@ -362,16 +366,21 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
   .stag{font-size:8px;}
 }
 
-/* FORM */
-.form-group{display:flex;flex-direction:column;gap:6px;}
-.form-label{font-family:'Courier Prime',monospace;font-size:12px;color:var(--muted);letter-spacing:2px;}
-.form-input{background:var(--bg2);border:1px solid var(--bg3);border-radius:8px;padding:12px 16px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:border-color .2s,box-shadow .2s;resize:none;width:100%;}
-.form-input::placeholder{color:var(--dim);}
-.form-input:focus{border-color:var(--gd);box-shadow:0 0 0 3px rgba(74,222,128,.08);}
-.form-input:focus::placeholder{color:transparent;}
-@media(max-width:600px){
-  .form-wrap form > div:first-child{grid-template-columns:1fr !important;}
-}
+/* CONTACTO WHATSAPP */
+.cta-wa{font-size:16px;padding:16px 32px;}
+.cta-wa svg{width:22px;height:22px;flex-shrink:0;}
+.cta-phone{font-family:'Courier Prime',monospace;font-size:14px;color:var(--muted);letter-spacing:2px;margin-top:1.2rem;}
+.cta-phone strong{color:var(--w);font-weight:700;}
+
+/* AVISO CURSOS DE IA */
+.cursos-strip{padding:0 2.5rem 5rem;}
+.cursos-banner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;background:linear-gradient(135deg,#0C1A0C,#060D06);border:1px solid var(--gd);border-radius:14px;padding:2rem 2.2rem;text-decoration:none;cursor:none;transition:transform .3s,box-shadow .3s;}
+.cursos-banner:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(74,222,128,.12);}
+.cb-tag{font-family:'Courier Prime',monospace;font-size:12px;color:var(--g);letter-spacing:3px;margin-bottom:.5rem;}
+.cb-title{font-family:'Courier Prime',monospace;font-size:clamp(24px,3vw,34px);font-weight:700;color:var(--w);line-height:1.15;margin-bottom:.4rem;}
+.cb-title .g{color:var(--g);}
+.cb-desc{font-size:16px;color:#7CA07C;font-weight:300;}
+@media(max-width:600px){.cursos-strip{padding:0 1.2rem 3rem;}.cursos-banner{padding:1.5rem;}.cursos-banner .btn-primary{width:100%;justify-content:center;}}
 
 /* WHATSAPP FLOAT */
 .wa-float{position:fixed;bottom:24px;right:24px;width:58px;height:58px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;z-index:95;box-shadow:0 6px 24px rgba(74,222,128,.35);transition:transform .25s,box-shadow .25s;cursor:none;}
@@ -379,7 +388,6 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
 .wa-float svg{width:32px;height:32px;}
 @media(max-width:600px){.wa-float{bottom:16px;right:16px;width:52px;height:52px;cursor:pointer;}.wa-float svg{width:28px;height:28px;}}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -402,6 +410,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
     <a href="#espacios">Espacios</a>
     <a href="#precios">Precios</a>
     <a href="#beneficio">Beneficios</a>
+    <a href="cursos.html">Cursos IA</a>
     <a href="#blog">Blog</a>
     <a href="#faq">FAQ</a>
   </div>
@@ -511,7 +520,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
           <div class="sp-desc">1 oficina privada con baño propio y acceso controlado. Para equipos o freelancers que necesitan concentración total y privacidad absoluta.</div>
           <ul class="sp-feat">
             <li>Acceso 24/7 con código personal</li>
-            <li>Internet dedicado 500 Gbps</li>
+            <li>Internet dedicado 500 Mbps</li>
             <li>Escritorio y silla ergonómica premium</li>
             <li>Monitor 4K disponible</li>
             <li>Privacidad total · NDA friendly</li>
@@ -528,7 +537,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
           <div class="sp-desc">Espacio abierto de coworking diseñado para la colaboración e intercambio de ideas entre la comunidad de developers.</div>
           <ul class="sp-feat">
             <li>Hot desks disponibles diario o mensual</li>
-            <li>Internet 200 Gbps compartido</li>
+            <li>Internet 200 Mbps compartido</li>
             <li>Área de colaboración y whiteboard</li>
             <li>Café, snacks y chill zone</li>
             <li>Comunidad activa de devs y designers</li>
@@ -553,7 +562,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
         <div class="price-divider"></div>
         <ul class="price-features">
           <li>Escritorio en Open Lab</li>
-          <li>Internet 200 Gbps</li>
+          <li>Internet 200 Mbps</li>
           <li>Café incluido</li>
           <li>Acceso de 9 am a 5 pm</li>
           <li class="off">Acceso 24/7</li>
@@ -569,7 +578,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
         <div class="price-divider"></div>
         <ul class="price-features">
           <li>Escritorio en Open Lab ilimitado</li>
-          <li>Internet 200 Gbps</li>
+          <li>Internet 200 Mbps</li>
           <li>Café incluido</li>
           <li>Acceso de 8 am a 8 pm</li>
           <li>Matching de proyectos activo</li>
@@ -585,7 +594,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
         <div class="price-divider"></div>
         <ul class="price-features">
           <li>Oficina privada exclusiva con baño</li>
-          <li>Internet dedicado 500 Gbps</li>
+          <li>Internet dedicado 500 Mbps</li>
           <li>Café incluido</li>
           <li>Acceso 24/7 con código único</li>
           <li>Matching de proyectos premium</li>
@@ -597,6 +606,20 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
     </div>
   </div>
 </section>
+
+<!-- CURSOS DE IA -->
+<div class="cursos-strip">
+  <div class="section-inner">
+    <a href="cursos.html" class="cursos-banner reveal">
+      <div>
+        <div class="cb-tag">NUEVO · CURSOS DE IA</div>
+        <div class="cb-title">Aprende a trabajar con <span class="g">IA</span> en The Lab</div>
+        <div class="cb-desc">IA para negocios · Programar con IA · Automatizaciones con IA. Presencial en San Luis Potosí.</div>
+      </div>
+      <span class="btn-primary">VER CURSOS <span class="arrow">→</span></span>
+    </a>
+  </div>
+</div>
 
 <!-- EL GRAN BENEFICIO -->
 <section class="benefit-section" id="beneficio">
@@ -674,6 +697,12 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
         </div>
         <div class="gal-overlay"><div class="gal-label">RECEPCIÓN</div></div>
       </div>
+      <div class="gal-item large end gc6 reveal reveal-delay-3">
+        <div class="gal-inner">
+          <img src="assets/img/sala-juntas.jpg" alt="Sala de juntas The Lab con pantalla y mesa para 4" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;display:block;"/>
+        </div>
+        <div class="gal-overlay"><div class="gal-label">SALA DE JUNTAS</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -722,7 +751,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
     <h2 class="sh2 reveal">Cómo <span class="g">funciona</span></h2>
     <p class="ssub reveal">4 pasos para pasar de tener talento a trabajar en los mejores proyectos tech de la ciudad.</p>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">01</div><div class="step-title">Aplica</div><div class="step-desc">Llena el formulario con tu perfil, stack y nivel de experiencia.</div></div>
+      <div class="step-card reveal"><div class="step-num">01</div><div class="step-title">Escríbenos</div><div class="step-desc">Mándanos un WhatsApp con tu perfil, stack y nivel de experiencia.</div></div>
       <div class="step-card reveal reveal-delay-1"><div class="step-num">02</div><div class="step-title">Evaluación</div><div class="step-desc">El equipo de The Lab revisa y valida tus habilidades técnicas.</div></div>
       <div class="step-card reveal reveal-delay-2"><div class="step-num">03</div><div class="step-title">Match</div><div class="step-desc">Te conectamos con proyectos reales de empresas tech de SLP.</div></div>
       <div class="step-card reveal reveal-delay-3"><div class="step-num">04</div><div class="step-title">Ship &amp; earn</div><div class="step-desc">Trabajas desde el lab, entregas y recibes tu pago. Así de directo.</div></div>
@@ -809,46 +838,22 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
   </div>
 </section>
 
-<!-- CTA FINAL + FORMULARIO -->
+<!-- CTA FINAL + WHATSAPP -->
 <section class="cta-section" id="contacto">
   <div class="cta-glow"></div>
   <div class="cta-tag reveal">10 · ÚNETE AL LAB</div>
   <h2 class="cta-h2 reveal">¿Tienes el<br><span class="g">talento</span>?</h2>
-  <p class="cta-sub reveal">Aplica ahora. Los lugares son limitados y la selección es por mérito.</p>
+  <p class="cta-sub reveal">Escríbenos por WhatsApp y apartamos tu lugar. Los lugares son limitados.</p>
 
-  <!-- FORM -->
-  <div class="form-wrap reveal" style="max-width:540px;margin:2.5rem auto 0;text-align:left;">
-    <div id="form-success" style="display:none;padding:1.5rem;background:#0B1F0B;border:1px solid var(--gd);border-radius:10px;text-align:center;">
-      <div style="font-family:'Courier Prime',monospace;font-size:15px;color:var(--g);margin-bottom:.5rem;">✓ Aplicación recibida</div>
-      <div style="font-size:15px;color:var(--muted);">Te contactamos pronto en <strong style="color:var(--w);">sales@thelabcoworking.mx</strong></div>
-    </div>
-    <form id="apply-form" style="display:flex;flex-direction:column;gap:1rem;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-        <div class="form-group">
-          <label class="form-label">Nombre completo</label>
-          <input type="text" id="f-nombre" class="form-input" placeholder="Tu nombre" required/>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Correo electrónico</label>
-          <input type="email" id="f-email" class="form-input" placeholder="tu@email.com" required/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Teléfono / WhatsApp</label>
-        <input type="tel" id="f-telefono" class="form-input" placeholder="+52 444 000 0000" required/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">¿A qué te dedicas y cuánto tiempo llevas programando o diseñando?</label>
-        <textarea id="f-descripcion" class="form-input" rows="4" placeholder="Ej: Soy desarrollador backend con 3 años de experiencia en Python y Django. Actualmente trabajo como freelance..." required></textarea>
-      </div>
-      <button type="submit" class="btn-primary" id="form-btn" style="width:100%;justify-content:center;font-size:15px;padding:14px;">
-        <span id="btn-text">ENVIAR APLICACIÓN →</span>
-      </button>
-      <div id="form-error" style="display:none;font-family:'Courier Prime',monospace;font-size:13px;color:#EF4444;text-align:center;"></div>
-    </form>
+  <div class="cta-actions reveal">
+    <a href="https://wa.me/524448491367?text=Hola%2C%20quiero%20unirme%20a%20The%20Lab%20Coworking" class="btn-primary cta-wa" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="#080D08" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.893c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652a11.95 11.95 0 005.71 1.453h.006c6.585 0 11.946-5.359 11.949-11.893a11.82 11.82 0 00-3.479-8.405"/></svg>
+      ESCRÍBENOS POR WHATSAPP <span class="arrow">→</span>
+    </a>
   </div>
+  <div class="cta-phone reveal">WHATSAPP · <strong>444 849 1367</strong></div>
 
-  <div class="cta-code reveal" style="margin-top:2rem;">$ thelab --apply --profile your_github <span>// spots limited</span></div>
+  <div class="cta-code reveal" style="margin-top:2rem;">$ thelab --contact whatsapp <span>// spots limited</span></div>
 </section>
 
 <!-- FOOTER -->
@@ -879,6 +884,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
         <li><a href="#comunidad">Programadores</a></li>
         <li><a href="#comunidad">Diseñadores</a></li>
         <li><a href="#comunidad">IA engineers</a></li>
+        <li><a href="cursos.html">Cursos de IA</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -887,6 +893,7 @@ footer{border-top:1px solid var(--bg3);padding:2.5rem;background:var(--bg2);}
       <div class="fcol-title">CONTACTO</div>
       <ul class="flinks">
         <li><a href="mailto:sales@thelabcoworking.mx">sales@thelabcoworking.mx</a></li>
+        <li><a href="tel:+524448491367">Tel. 444 849 1367</a></li>
         <li><a href="https://wa.me/524448491367" class="flinks-wa" target="_blank" rel="noopener">WhatsApp · 444 849 1367</a></li>
         <li style="margin-top:.8rem;">
           <span style="font-size:14px;color:var(--dim);line-height:1.6;">
@@ -953,50 +960,5 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 });
 </script>
 
-<script>
-// ── SUPABASE CONFIG ──
-const SUPABASE_URL = 'https://opbsotmaykeleysqmojr.supabase.co'
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wYnNvdG1heWtlbGV5c3Ftb2pyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5MjAxNjIsImV4cCI6MjA5NTQ5NjE2Mn0.f4goLyO9Fjyx72xshlRms27ynld43T1-xPsNBsQK8R8'
-const { createClient } = supabase
-const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
-
-// ── FORM HANDLER ──
-document.getElementById('apply-form').addEventListener('submit', async (e) => {
-  e.preventDefault()
-  const btn = document.getElementById('form-btn')
-  const btnText = document.getElementById('btn-text')
-  const errEl = document.getElementById('form-error')
-
-  const nombre    = document.getElementById('f-nombre').value.trim()
-  const email     = document.getElementById('f-email').value.trim()
-  const telefono  = document.getElementById('f-telefono').value.trim()
-  const descripcion = document.getElementById('f-descripcion').value.trim()
-
-  btnText.textContent = 'Enviando...'
-  btn.disabled = true
-  errEl.style.display = 'none'
-
-  try {
-    const { error } = await db.from('aplicantes').insert([{
-      nombre,
-      email,
-      telefono,
-      descripcion,
-      created_at: new Date().toISOString()
-    }])
-
-    if (error) throw error
-
-    document.getElementById('apply-form').style.display = 'none'
-    document.getElementById('form-success').style.display = 'block'
-
-  } catch (err) {
-    errEl.textContent = '✕ Error al enviar. Intenta de nuevo o escríbenos a sales@thelabcoworking.mx'
-    errEl.style.display = 'block'
-    btnText.textContent = 'ENVIAR APLICACIÓN →'
-    btn.disabled = false
-  }
-})
-</script>
 </body>
 </html>

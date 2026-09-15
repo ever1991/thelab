@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cursos de IA — The Lab Coworking San Luis Potosí</title>
+<meta name="description" content="Cursos presenciales de inteligencia artificial en The Lab, San Luis Potosí: IA para negocios, programar con IA y automatizaciones con IA."/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%23080D08'/%3E%3Crect%20x='1.5'%20y='1.5'%20width='29'%20height='29'%20rx='6'%20fill='%230C150C'%20stroke='%2315803D'/%3E%3Ctext%20x='16'%20y='21.5'%20font-family='monospace'%20font-size='13'%20font-weight='bold'%20fill='%234ADE80'%20text-anchor='middle'%3ETL%3C/text%3E%3C/svg%3E"/>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--g:#4ADE80;--gd:#15803D;--gx:#14532D;--bg:#080D08;--bg2:#0C150C;--bg3:#0D2B0D;--dim:#1E3A1E;--muted:#166534;--w:#FFFFFF;--txt:#C9E8D0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--w);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden;}
+.g{color:var(--g);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;padding:0 2.5rem;height:60px;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:rgba(8,13,8,.85);border-bottom:1px solid var(--bg3);backdrop-filter:blur(16px);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-icon{width:28px;height:28px;background:var(--bg2);border:1px solid var(--bg3);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.nav-icon span{font-family:'Courier Prime',monospace;font-size:10px;font-weight:700;color:var(--g);}
+.nav-brand{font-family:'Courier Prime',monospace;font-size:14px;font-weight:700;color:var(--w);}
+.nav-brand em{color:var(--g);font-style:normal;}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.nav-back{font-family:'Courier Prime',monospace;font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:1px;transition:color .2s;}
+.nav-back:hover{color:var(--g);}
+.nav-cta{font-family:'Courier Prime',monospace;font-size:12px;padding:8px 18px;border-radius:6px;background:var(--g);color:#080D08;font-weight:700;text-decoration:none;letter-spacing:1px;}
+
+/* BOTONES */
+.btn-primary{font-family:'Courier Prime',monospace;font-size:13px;padding:13px 26px;background:var(--g);color:#080D08;border-radius:6px;text-decoration:none;font-weight:700;letter-spacing:1px;transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;justify-content:center;gap:10px;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(74,222,128,.25);}
+.btn-outline{font-family:'Courier Prime',monospace;font-size:13px;padding:12px 26px;background:transparent;color:var(--g);border:1px solid var(--bg3);border-radius:6px;text-decoration:none;letter-spacing:1px;transition:all .2s;display:inline-flex;align-items:center;justify-content:center;gap:10px;}
+.btn-outline:hover{border-color:var(--gd);background:rgba(74,222,128,.04);}
+.ico{width:18px;height:18px;flex-shrink:0;}
+
+/* HERO */
+.hero{max-width:1100px;margin:0 auto;padding:6rem 2.5rem 4rem;position:relative;}
+.hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:700px;max-width:100%;height:360px;background:radial-gradient(ellipse,rgba(74,222,128,.06) 0%,transparent 70%);pointer-events:none;}
+.tag{font-family:'Courier Prime',monospace;font-size:12px;color:var(--g);letter-spacing:4px;margin-bottom:1.5rem;}
+.tag::before{content:'—— ';color:var(--gd);}
+.hero h1{font-family:'Courier Prime',monospace;font-size:clamp(44px,7vw,84px);font-weight:700;line-height:1.02;letter-spacing:-2px;margin-bottom:1.5rem;}
+.hero-sub{font-size:21px;color:#7CA07C;font-weight:300;max-width:640px;margin-bottom:2.2rem;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.term{font-family:'Courier Prime',monospace;font-size:13px;color:var(--dim);margin-top:2.5rem;}
+.term span{color:var(--g);}
+
+/* SECCIONES */
+.section{max-width:1100px;margin:0 auto;padding:4rem 2.5rem;}
+.sh2{font-family:'Courier Prime',monospace;font-size:clamp(30px,4vw,46px);font-weight:700;letter-spacing:-1px;line-height:1.1;margin-bottom:.8rem;}
+.ssub{font-size:18px;color:#7CA07C;font-weight:300;max-width:620px;}
+
+/* CURSOS */
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.course{background:var(--bg2);border:1px solid var(--bg3);border-radius:14px;padding:2rem;display:flex;flex-direction:column;transition:border-color .3s,transform .3s;}
+.course:hover{border-color:var(--gd);transform:translateY(-4px);}
+.c-num{font-family:'Courier Prime',monospace;font-size:13px;color:var(--gd);letter-spacing:2px;margin-bottom:1.2rem;}
+.c-for{display:inline-block;align-self:flex-start;font-family:'Courier Prime',monospace;font-size:11px;color:var(--g);letter-spacing:2px;border:1px solid var(--bg3);border-radius:4px;padding:3px 10px;margin-bottom:1rem;}
+.c-title{font-family:'Courier Prime',monospace;font-size:26px;font-weight:700;line-height:1.2;margin-bottom:.8rem;}
+.c-desc{font-size:16px;color:var(--txt);font-weight:300;margin-bottom:1.5rem;}
+.c-label{font-family:'Courier Prime',monospace;font-size:11px;color:var(--muted);letter-spacing:3px;margin-bottom:.8rem;}
+.c-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem;}
+.c-list li{font-size:15px;color:var(--txt);display:flex;gap:10px;line-height:1.5;}
+.c-list li::before{content:'▸';color:var(--g);flex-shrink:0;}
+.course .btn-primary{margin-top:auto;width:100%;font-size:12px;}
+
+/* CÓMO FUNCIONAN */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.how{border-top:1px solid var(--bg3);padding-top:1.5rem;}
+.how-icon{font-family:'Courier Prime',monospace;font-size:22px;color:var(--g);margin-bottom:.8rem;}
+.how-title{font-family:'Courier Prime',monospace;font-size:18px;font-weight:700;margin-bottom:.4rem;}
+.how-desc{font-size:15px;color:#7CA07C;font-weight:300;}
+
+/* CTA FINAL */
+.cta{text-align:center;padding:5rem 2.5rem 6rem;position:relative;overflow:hidden;border-top:1px solid var(--bg3);}
+.cta h2{font-family:'Courier Prime',monospace;font-size:clamp(34px,5vw,60px);font-weight:700;letter-spacing:-1.5px;line-height:1.05;margin-bottom:1rem;}
+.cta p{font-size:19px;color:#7CA07C;font-weight:300;margin:0 auto 2.2rem;max-width:560px;}
+.cta .btn-primary{font-size:15px;padding:16px 32px;}
+.cta-phone{font-family:'Courier Prime',monospace;font-size:14px;color:var(--muted);letter-spacing:2px;margin-top:1.2rem;}
+.cta-phone strong{color:var(--w);}
+
+/* FOOTER */
+footer{border-top:1px solid var(--bg3);padding:2rem 7rem 2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-family:'Courier Prime',monospace;font-size:12px;color:var(--dim);letter-spacing:1px;}
+footer a{color:var(--muted);text-decoration:none;}
+footer a:hover{color:var(--g);}
+
+/* WHATSAPP FLOTANTE */
+.wa-float{position:fixed;bottom:24px;right:24px;width:58px;height:58px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;z-index:95;box-shadow:0 6px 24px rgba(74,222,128,.35);transition:transform .25s;}
+.wa-float:hover{transform:translateY(-3px) scale(1.05);}
+.wa-float .ico{width:30px;height:30px;}
+
+@media(max-width:900px){
+  .course-grid,.how-grid{grid-template-columns:1fr;}
+  .nav-back{display:none;}
+}
+@media(max-width:600px){
+  nav{padding:0 1.2rem;}
+  .nav-cta{font-size:11px;padding:7px 12px;}
+  .hero{padding:3.5rem 1.2rem 2.5rem;}
+  .hero-sub{font-size:17px;}
+  .hero-actions{flex-direction:column;}
+  .hero-actions a{width:100%;}
+  .section{padding:3rem 1.2rem;}
+  .course{padding:1.5rem;}
+  .c-title{font-size:23px;}
+  .cta{padding:3.5rem 1.2rem 5rem;}
+  .cta p{font-size:17px;}
+  .cta .btn-primary{width:100%;}
+  footer{padding:1.5rem 1.2rem 6rem;justify-content:center;text-align:center;}
+  .wa-float{bottom:16px;right:16px;width:52px;height:52px;}
+  .wa-float .ico{width:26px;height:26px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Ícono de WhatsApp (se reutiliza con <use href="#wa">) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.893c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652a11.95 11.95 0 005.71 1.453h.006c6.585 0 11.946-5.359 11.949-11.893a11.82 11.82 0 00-3.479-8.405"/></symbol>
+</svg>
+
+<a href="https://wa.me/524448491367?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20los%20cursos%20de%20IA%20en%20The%20Lab" class="wa-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="color:#080D08;">
+  <svg class="ico"><use href="#wa"/></svg>
+</a>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-icon"><span>TL</span></div>
+    <div class="nav-brand">THE <em>LAB</em></div>
+  </a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← Volver al inicio</a>
+    <a href="#cursos" class="nav-cta">VER CURSOS</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="tag">CURSOS · INTELIGENCIA ARTIFICIAL</div>
+  <h1>Aprende a <span class="g">trabajar</span><br>con IA.</h1>
+  <p class="hero-sub">Cursos presenciales en The Lab, San Luis Potosí. Para negocios, developers y equipos que quieren automatizar. Sin relleno: sales usando la IA en tu trabajo.</p>
+  <div class="hero-actions">
+    <a href="#cursos" class="btn-primary">VER LOS CURSOS <span>→</span></a>
+    <a href="https://wa.me/524448491367?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20los%20cursos%20de%20IA%20en%20The%20Lab" class="btn-outline" target="_blank" rel="noopener"><svg class="ico"><use href="#wa"/></svg> PREGUNTAR POR WHATSAPP</a>
+  </div>
+  <div class="term">$ thelab --cursos ia <span>// presencial · San Luis Potosí</span></div>
+</header>
+
+<!-- CURSOS -->
+<section class="section" id="cursos">
+  <h2 class="sh2">Tres <span class="g">cursos</span>, un objetivo</h2>
+  <p class="ssub">Que la IA haga el trabajo repetitivo y tú te quedes con lo que importa. Elige según lo que haces hoy.</p>
+
+  <div class="course-grid">
+
+    <article class="course">
+      <div class="c-num">01</div>
+      <div class="c-for">PARA NEGOCIOS</div>
+      <h3 class="c-title">IA para negocios</h3>
+      <p class="c-desc">Para dueños, directivos y equipos que no programan. Usa ChatGPT y Claude en tu día a día para vender, atender y decidir mejor.</p>
+      <div class="c-label">LO QUE VAS A APRENDER</div>
+      <ul class="c-list">
+        <li>Escribir instrucciones (prompts) que sí dan buenos resultados</li>
+        <li>Redactar correos, propuestas y contenido en minutos</li>
+        <li>Analizar documentos, hojas de cálculo y reportes</li>
+        <li>Atención a clientes y ventas con apoyo de IA</li>
+        <li>Qué información no debes subir a una IA</li>
+      </ul>
+      <a href="https://wa.me/524448491367?text=Hola%2C%20me%20interesa%20el%20curso%20de%20IA%20para%20negocios%20en%20The%20Lab" class="btn-primary" target="_blank" rel="noopener"><svg class="ico"><use href="#wa"/></svg> PEDIR INFORMES</a>
+    </article>
+
+    <article class="course">
+      <div class="c-num">02</div>
+      <div class="c-for">PARA DEVELOPERS</div>
+      <h3 class="c-title">Programar con IA</h3>
+      <p class="c-desc">Para developers que quieren sacar proyectos más rápido sin perder el control del código. Agentes de programación en proyectos reales.</p>
+      <div class="c-label">LO QUE VAS A APRENDER</div>
+      <ul class="c-list">
+        <li>Claude Code, Cursor y Copilot en tu flujo de trabajo</li>
+        <li>Planear, generar, revisar y probar con agentes</li>
+        <li>Darle contexto a la IA sobre tu proyecto</li>
+        <li>Revisar lo que escribe la IA antes de confiar en ello</li>
+        <li>Llevar un proyecto de la idea a producción</li>
+      </ul>
+      <a href="https://wa.me/524448491367?text=Hola%2C%20me%20interesa%20el%20curso%20de%20Programar%20con%20IA%20en%20The%20Lab" class="btn-primary" target="_blank" rel="noopener"><svg class="ico"><use href="#wa"/></svg> PEDIR INFORMES</a>
+    </article>
+
+    <article class="course">
+      <div class="c-num">03</div>
+      <div class="c-for">PARA EQUIPOS</div>
+      <h3 class="c-title">Automatizaciones con IA</h3>
+      <p class="c-desc">Para equipos de operación, ventas y developers. Conecta la IA a tus procesos para que las tareas repetitivas se hagan solas.</p>
+      <div class="c-label">LO QUE VAS A APRENDER</div>
+      <ul class="c-list">
+        <li>Flujos automáticos con n8n y Make</li>
+        <li>Bots de WhatsApp que responden con IA</li>
+        <li>Conectar IA a hojas de cálculo, CRM y correo</li>
+        <li>Agentes que ejecutan tareas por ti</li>
+        <li>Detectar qué procesos de tu empresa conviene automatizar</li>
+      </ul>
+      <a href="https://wa.me/524448491367?text=Hola%2C%20me%20interesa%20el%20curso%20de%20Automatizaciones%20con%20IA%20en%20The%20Lab" class="btn-primary" target="_blank" rel="noopener"><svg class="ico"><use href="#wa"/></svg> PEDIR INFORMES</a>
+    </article>
+
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONAN -->
+<section class="section">
+  <h2 class="sh2">Cómo <span class="g">funcionan</span></h2>
+  <div class="how-grid">
+    <div class="how">
+      <div class="how-icon">◈</div>
+      <div class="how-title">Presencial en The Lab</div>
+      <p class="how-desc">Las clases son en nuestro espacio en San Luis Potosí, cara a cara con quien te enseña.</p>
+    </div>
+    <div class="how">
+      <div class="how-icon">⌘</div>
+      <div class="how-title">Trae tu laptop</div>
+      <p class="how-desc">Es práctico: trabajas sobre tus propios casos, no sobre ejemplos de libro.</p>
+    </div>
+    <div class="how">
+      <div class="how-icon">✆</div>
+      <div class="how-title">Fechas y precios por WhatsApp</div>
+      <p class="how-desc">Escríbenos y te mandamos las fechas del próximo grupo y el precio de cada curso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta">
+  <div class="hero-glow"></div>
+  <h2>¿No sabes <span class="g">cuál</span> tomar?</h2>
+  <p>Cuéntanos a qué te dedicas y te recomendamos el curso que más te sirve.</p>
+  <a href="https://wa.me/524448491367?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20los%20cursos%20de%20IA%20en%20The%20Lab" class="btn-primary" target="_blank" rel="noopener"><svg class="ico"><use href="#wa"/></svg> ESCRÍBENOS POR WHATSAPP <span>→</span></a>
+  <div class="cta-phone">WHATSAPP · <strong>444 849 1367</strong></div>
+</section>
+
+<footer>
+  <span>© 2026 THE LAB · SAN LUIS POTOSÍ</span>
+  <span><a href="mailto:sales@thelabcoworking.mx">sales@thelabcoworking.mx</a> · <a href="tel:+524448491367">Tel. 444 849 1367</a></span>
+  <a href="index.html">← Volver a The Lab Coworking</a>
+</footer>
+
+</body>
+</html>
