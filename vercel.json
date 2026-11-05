@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/cursos(.html)?", "destination": "/", "permanent": false },
+    { "source": "/blog-:slug", "destination": "/", "permanent": false }
+  ]
+}
